@@ -57,3 +57,4 @@ export type EventListeners = {
     onBlur: (params: BasicListenersParams) => void;
     onFocus: (params: BasicListenersParams) => void;
 }
+export type Format = 'text' | 'delta' | 'json' | 'html'

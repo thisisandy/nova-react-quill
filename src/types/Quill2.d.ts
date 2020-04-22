@@ -1,3 +1,9 @@
+/*
+ * @Author: Andy.Hu 
+ * @Date: 2020-04-22 22:25:07 
+ * @Last Modified by: Andy.Hu
+ * @Last Modified time: 2020-04-22 23:31:07
+ */
 
 declare module 'quill2' {
   export type Sources = 'api' | 'user' | 'silent'
@@ -91,7 +97,7 @@ declare module 'quill2' {
   interface ClipboardStatic {
     container: any;
     matchers: Array<[Selector, Matcher]>;
-    convert(html?: string): QuillDelta;
+    convert(content:{html?: string,text?:string},formats?:StringMap): QuillDelta;
     onPaste(event: ClipboardEvent): void;
     prepareMatching(): void;
     addMatcher(selectorOrNodeType: Selector, callback: Matcher): void;
@@ -259,7 +265,7 @@ declare module 'quill2' {
     getLines(range: RangeStatic): any[];
   }
 
-  export class Quill {
+   export class Quill {
     constructor(el:Element,options:object):QuillEditor
   }
 }
